@@ -21,7 +21,7 @@ Making complex decisions can be risky due to a lack of clarity about their impli
 - **Backend:** [FastAPI](https://fastapi.tiangolo.com/) for API management.
 - **Conversational AI:**
   - [IBM Watsonx Assistant](https://www.ibm.com/watsonx) for capturing variables and guiding users.
-  - **Granite 8B Instruct** model for initial interactions.
+  - **Granite 8B Instruct** (https://huggingface.co/ibm-granite/granite-3.0-8b-instruct) model for initial interactions.
   - [Llama 3.1 70B](https://huggingface.co/) for advanced inference and analysis of complex scenarios.
 - **Orchestration:** [LangChain](https://langchain.com/) for managing AI workflows and integrations.
 - **Infrastructure:** [CrewAI](https://crewai.com/) for call optimization and task management.
