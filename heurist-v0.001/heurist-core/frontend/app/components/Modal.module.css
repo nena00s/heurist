@@ -1,0 +1,69 @@
+/* Fundo do modal */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4000;
+  }
+  
+  /* Container principal do modal */
+  .modal {
+    background: #000;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    width: 90%; /* Ocupa largura em telas pequenas */
+    max-width: 400px;
+    position: relative;
+  }
+  
+  /* Logo centralizado */
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  /* Botão de fechar no topo */
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Header com título centralizado */
+  .header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Conteúdo do modal */
+  .content {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  

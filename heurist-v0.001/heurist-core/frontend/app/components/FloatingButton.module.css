@@ -1,0 +1,62 @@
+.tooltipContainer {
+    position: fixed;
+    bottom: 70px;
+    right: 10%;
+    transform: translateX(50%); /* Centraliza horizontalmente no desktop */
+    z-index: 1000;
+  }
+  
+  @media (max-width: 768px) {
+    .tooltipContainer {
+      bottom: 20px; /* Ajuste a posição no mobile */
+      right: 20px; /* Move para o canto inferior direito no mobile */
+      transform: none; /* Remove o alinhamento central no mobile */
+    }
+  }
+  
+  .floatingButton {
+    background-color: #000;
+    border: none;
+    border-radius: 25%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .floatingButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .icon {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%; /* Coloca o tooltip acima do botão */
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px); /* Centraliza acima */
+    background-color: #000;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tooltipContainer:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-14px); /* Leve movimento para cima ao aparecer */
+  }
+  

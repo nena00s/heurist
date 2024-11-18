@@ -1,0 +1,75 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Preenche toda a altura da janela */
+    width: 100vw; /* Garante a largura completa da janela */
+    position: fixed; /* Fixa a posição no centro da tela */
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Mantém o loader acima de outros elementos */
+    background-color: rgba(0, 0, 0, 0.1); /* Opcional: fundo semitransparente */
+  }
+  
+  .loader {
+    width: 60px; /* Aumentado de 24px para 60px */
+    height: 60px; /* Aumentado de 24px para 60px */
+    position: relative;
+  }
+  
+  .loader::before,
+  .loader::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em; /* Aumentado de 24em para 30em */
+    height: 30em; /* Aumentado de 24em para 30em */
+    background-image: radial-gradient(circle 6px, #fff 100%, transparent 0),
+      radial-gradient(circle 6px, #fff 100%, transparent 0),
+      radial-gradient(circle 6px, #fff 100%, transparent 0),
+      radial-gradient(circle 6px, #fff 100%, transparent 0),
+      radial-gradient(circle 6px, #fff 100%, transparent 0),
+      radial-gradient(circle 6px, #fff 100%, transparent 0),
+      radial-gradient(circle 6px, #fff 100%, transparent 0),
+      radial-gradient(circle 6px, #fff 100%, transparent 0);
+    background-position: 0em -11em, 0em 11em, 11em 0em, -11em 0em, 8em -8em,
+      -8em -8em, 8em 8em, -8em 8em; /* Ajustado para maior escala */
+    background-repeat: no-repeat;
+    font-size: 0.35px; /* Ajustado para manter a proporção */
+    border-radius: 50%;
+    animation: blast 1s ease-in infinite;
+  }
+  
+  .loader::after {
+    font-size: 0.7px; /* Ajustado proporcionalmente */
+    background: #fff;
+    animation: bounce 1s ease-in infinite;
+  }
+  
+  @keyframes bounce {
+    0%,
+    100% {
+      font-size: 0.5px; /* Aumentado para acompanhar o novo tamanho */
+    }
+    50% {
+      font-size: 1px; /* Aumentado proporcionalmente */
+    }
+  }
+  
+  @keyframes blast {
+    0%,
+    40% {
+      font-size: 0.35px; /* Ajustado proporcionalmente */
+    }
+    70% {
+      opacity: 1;
+      font-size: 2.5px; /* Aumentado para maior impacto */
+    }
+    100% {
+      font-size: 4px; /* Aumentado proporcionalmente */
+      opacity: 0;
+    }
+  }
+  

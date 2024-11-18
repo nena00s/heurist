@@ -1,0 +1,298 @@
+/* Body e Root */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: 
+    linear-gradient(0deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 30px 30px; /* Tamanho das células do grid */
+  background-color: #070707; /* Fundo cinza escuro */
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+}
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Faz com que o app ocupe a altura total da janela */
+}
+
+.main {
+  flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+:root {
+  --background: #ffffff;
+  --text: #000000;
+}
+
+.dark {
+  --background: #121212;
+  --text: #ffffff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--background);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  position: relative;
+}
+
+/* Modal */
+.modal {
+  background: var(--background);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+/* Floating Button */
+.floating-button {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.floating-button:hover {
+  background-color: #0056b3;
+}
+
+/* Chat Modal */
+.chat-modal .chat-box {
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: var(--background);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.chat-modal .message {
+  margin-bottom: 0.5rem;
+}
+
+.chat-modal .message.user {
+  text-align: right;
+  color: #007bff;
+}
+
+.chat-modal .message.universe {
+  text-align: left;
+  color: #333;
+}
+
+/* Campo de texto no modal */
+/* Campo de texto no modal */
+/* Campo de texto no modal */
+.modal-input {
+  width: 100%; /* Garante que o input ocupe 100% da largura do contêiner */
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+  padding: 10px 12px; /* Ajuste do padding */
+  margin: 10px auto; /* Espaçamento acima e abaixo */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
+  border-radius: 6px; /* Borda arredondada */
+  background: #121212; /* Fundo escuro */
+  color: #fff; /* Cor do texto */
+  font-size: 1rem; /* Tamanho da fonte */
+  line-height: 1.2; /* Altura da linha */
+  outline: none; /* Remove borda padrão do navegador */
+}
+
+/* Placeholder no input */
+.modal-input::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Cor do placeholder */
+  font-size: 1rem; /* Mesmo tamanho da fonte do input */
+  line-height: 1.2; /* Igual ao input */
+}
+
+
+/* Botão no modal */
+.modal-button {
+  width: 100%;
+  padding: 14px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.modal-button:hover {
+  background: #f1f1f1;
+  transform: translateY(-3px);
+}
+
+/* Estilo para o título da decisão ativa */
+.decision-title {
+  font-size: 2rem; /* Tamanho grande para destaque */
+  font-weight: bold; /* Negrito para enfatizar */
+  text-align: center; /* Centraliza o texto */
+  color: var(--text); /* Usa a cor definida no tema */
+  margin: 20px 0; /* Espaçamento acima e abaixo */
+  text-transform: capitalize; /* Primeira letra maiúscula */
+  word-wrap: break-word; /* Quebra de linha para palavras longas */
+}
+
+
+
+/* Resultados */
+.results-container,
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.no-results {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+/* Footer */
+/* Footer */
+.footer {
+  background-color: var(--background);
+  color: var(--text);
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto; /* Empurra o footer para o final da página */
+  width: 100%;
+}
+
+
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48em;
+  height: 48em;
+  background-image:
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0);
+  background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em,
+                       13em -13em, -13em -13em, 13em 13em, -13em 13em;
+  background-repeat: no-repeat;
+  font-size: 0.5px;
+  border-radius: 50%;
+  animation: blast 1s ease-in infinite;
+}
+
+.loader::after {
+  font-size: 1px;
+  background: #fff;
+  animation: bounce 1s ease-in infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    font-size: 0.75px;
+  }
+  50% {
+    font-size: 1.5px;
+  }
+}
+
+@keyframes blast {
+  0%,
+  40% {
+    font-size: 0.5px;
+  }
+  70% {
+    opacity: 1;
+    font-size: 4px;
+  }
+  100% {
+    font-size: 6px;
+    opacity: 0;
+  }
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+}
+
+
+
+
+.loader-text {
+  font-size: 1.2rem; /* Tamanho do texto */
+  font-weight: bold; /* Negrito */
+  color: #fff; /* Cor do texto */
+  margin-top: 50px; /* Espaçamento acima */
+  text-align: center; /* Centraliza o texto */
+  animation: fadeText 4s infinite ease-in-out; /* Adiciona animação de fade */
+}
+
+@keyframes fadeText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+

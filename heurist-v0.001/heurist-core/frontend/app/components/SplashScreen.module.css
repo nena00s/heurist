@@ -1,0 +1,87 @@
+/* Ajusta o alinhamento geral */
+.splashScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* Fundo preto */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  transition: opacity 1s ease; /* Transição suave para o fade-out da tela */
+}
+
+/* Wrapper para o logo e texto */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px; /* Altura fixa do container para evitar empurrões */
+}
+
+/* Logo fixo no topo */
+.logo {
+  width: 150px;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards; /* Animação inicial */
+}
+
+/* Texto do slogan com altura fixa */
+.text {
+  font-size: 1.2rem;
+  color: #fff;
+  height: 1.5em; /* Altura fixa */
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out 1.5s forwards; /* Aparece após o logo */
+  text-align: center;
+}
+
+/* Texto "Welcome" */
+.welcome {
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out, fadeOut 1.5s ease-in 1.5s forwards; /* Aparece e desaparece */
+  text-align: center;
+}
+
+
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  
+  /* Animações de fadeIn e fadeOut */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  /* Aplicação das animações */
+  .fadeIn {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+  
+  .fadeOut {
+    animation: fadeOut 1.5s ease-in forwards;
+  }
+  

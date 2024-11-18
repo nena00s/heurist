@@ -1,0 +1,240 @@
+/* frontend/app/components/ChatModal.module.css */
+
+.parentTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  .universeTitle {
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: #000;
+    color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .chatContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 650px;
+  }
+  
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    scrollbar-width: thin; /* Para navegadores compatíveis como Firefox */
+    scrollbar-color: #333 #000; /* Cor do scroll e do fundo */
+}
+
+/* Estilo para navegadores baseados em WebKit (Chrome, Edge, etc.) */
+.messages::-webkit-scrollbar {
+    width: 8px; /* Largura do scroll */
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #555; /* Cor do "polegar" (a parte que desliza) */
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: #777; /* Cor ao passar o mouse */
+}
+
+.messages::-webkit-scrollbar-track {
+    background: #000; /* Cor do trilho (fundo do scroll) */
+    border-radius: 4px;
+}
+
+
+
+/* Formatação de parágrafos dentro das mensagens */
+.messages p {
+  margin: 25px 20px; /* Espaçamento entre parágrafos */
+  line-height: 2.2; /* Altura da linha para melhor leitura */
+  font-weight: 600;
+}
+
+/* Estilo para texto em negrito */
+.messages strong {
+  font-weight: bold;
+  color: #fff; /* Negrito com destaque */
+}
+
+/* Estilo para texto em itálico */
+.messages em {
+  font-style: italic;
+  color: #ccc; /* Itálico com menor destaque */
+}
+
+/* Estilo para listas numeradas */
+.messages ol {
+  margin-left: 20px;
+  color: #ccc;
+}
+
+/* Estilo para listas não numeradas */
+.messages ul {
+  margin-left: 20px;
+  list-style-type: disc;
+  color: #ccc;
+}
+
+/* Itens de listas */
+.messages li {
+  margin-bottom: 5px;
+}
+
+
+  
+  .user {
+    text-align: right;
+    color: #7f848a;
+  }
+  
+  .system {
+    text-align: left;
+    color: #ccc;
+  }
+  
+  .chatInput {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: #121212;
+    color: #fff;
+    outline: none;
+    font-size: 1em; /* Ajusta o tamanho da fonte */
+    font-weight:600; /* Ajusta o peso da fonte */
+}
+
+  
+  .chatInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .sendButton {
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight:600; /* Ajusta o peso da fonte */
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .sendButton:hover {
+    background: #ccc;
+  }
+  
+  .iconContainer {
+    display: flex;
+    justify-content: center; /* Alinha os ícones ao centro */
+    gap: 50px; /* Espaçamento reduzido entre os ícones */
+    margin-top: 10px;
+}
+
+  
+  
+  .iconButton {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .iconButton:hover {
+    transform: scale(1.1);
+  }
+  
+
+
+
+
+
+
+
+
+
+  /* Sobreposição para a animação */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Fundo preto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 8100;
+  animation: fadeInOut 2s ease-in-out; /* Animação */
+}
+
+/* Estilo do nome da ferramenta */
+.toolName {
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Animação fade-in e fade-out */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

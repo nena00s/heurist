@@ -1,0 +1,35 @@
+.header {
+    background-color: #000; /* Fundo preto */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px; /* Espaçamento interno */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+    position: fixed; /* Torna o header fixo */
+    top: 0; /* Alinha ao topo da página */
+    left: 0; /* Garante que fique no início horizontal */
+    width: 100%; /* Ocupa toda a largura da tela */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+  }
+  
+  
+  .sidebarTrigger {
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .sidebarTrigger:hover {
+    transform: scale(1.1);
+  }
+  
+  .logo {
+    width: 180px;
+    height: auto;
+    margin-right: 50px; /* Ajusta o logo mais para a esquerda */
+  }
+  
+  
